@@ -98,10 +98,21 @@ namespace Miscellaneous
 
         #region Pattern Matching
 
+        public void Match(Action<T> some, Action none) 
+        {
+            if (some == null) throw new ArgumentNullException("some");
+            if (none == null) throw new ArgumentNullException("none");
+            
+            if (this.hasValue)
+                some(this.value);
+            else 
+                none();
+        }
+
         public K Match<K>(Func<T, K> some, Func<K> none)
         {
-            if (some == null) throw new ArgumentNullException("projection");
-            if (none == null) throw new ArgumentNullException("defaultProjection");
+            if (some == null) throw new ArgumentNullException("some");
+            if (none == null) throw new ArgumentNullException("none");
 
             return this.hasValue ? some(this.value) : none();
         }
