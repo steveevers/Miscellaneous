@@ -9,14 +9,13 @@ namespace Miscellaneous
 
     public class Maybe<T> : IMaybe, IEquatable<Maybe<T>>
     {
-        private readonly bool hasValue;
         private readonly T value;
 
-        private Maybe() { this.hasValue = false; }
+        private Maybe() { this.HasValue = false; }
         private Maybe(T value)
         {
             this.value = value;
-            this.hasValue = true;
+            this.HasValue = true;
         }
 
         public bool HasValue { get; private set; }
@@ -64,10 +63,10 @@ namespace Miscellaneous
 
         public bool Equals(Maybe<T> other)
         {
-            if (this.hasValue != other.hasValue)
+            if (this.HasValue != other.HasValue)
                 return false;
 
-            return !this.hasValue || this.value.Equals(other.value);
+            return !this.HasValue || this.value.Equals(other.value);
         }
 
         public bool Equals(IMaybe other)
@@ -88,7 +87,7 @@ namespace Miscellaneous
 
         public override int GetHashCode()
         {
-            if (!this.hasValue)
+            if (!this.HasValue)
                 return 0;
 
             return ReferenceEquals(this.value, null) ? -1 : this.value.GetHashCode();
@@ -103,7 +102,7 @@ namespace Miscellaneous
             if (some == null) throw new ArgumentNullException("some");
             if (none == null) throw new ArgumentNullException("none");
             
-            if (this.hasValue)
+            if (this.HasValue)
                 some(this.value);
             else 
                 none();
@@ -114,7 +113,7 @@ namespace Miscellaneous
             if (some == null) throw new ArgumentNullException("some");
             if (none == null) throw new ArgumentNullException("none");
 
-            return this.hasValue ? some(this.value) : none();
+            return this.HasValue ? some(this.value) : none();
         }
 
         #endregion
