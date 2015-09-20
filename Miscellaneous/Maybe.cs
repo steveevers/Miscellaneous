@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Miscellaneous
+namespace SE.Miscellaneous
 {
     public interface IMaybe : IEquatable<IMaybe>
     {

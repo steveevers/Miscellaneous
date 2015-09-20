@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Threading;
 
-namespace Miscellaneous
+namespace SE.Miscellaneous
 {
     /// <summary> 
     /// Convenience class for dealing with randomness. 
