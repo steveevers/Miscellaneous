@@ -7,8 +7,8 @@
     <ProjectGuid>{512A466A-3234-4232-8F75-C4874AC8D59F}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Miscellaneous</RootNamespace>
-    <AssemblyName>Miscellaneous</AssemblyName>
+    <RootNamespace>SE.Miscellaneous</RootNamespace>
+    <AssemblyName>SE.Miscellaneous</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
